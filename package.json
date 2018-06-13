@@ -1,0 +1,14 @@
+{
+  "name": "helloelectron",
+  "version": "1.0.0",
+  "description": "练习打包electron项目",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \\ \"Error: no test specified\\\" && exit 1",
+    "start": "electron .",
+    "packager": "electron-packager . HelloElectron --win --out ../HelloElectronApp --arch=ia32 --electron-version=2.0.2"
+  },
+  "repository": "https://github.com/albertolei/HelloElectron",
+  "author": "albertolei",
+  "license": "ISC"
+}
