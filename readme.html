@@ -1,22 +1,10 @@
 <!DOCTYPE html>
   <html>
     <head>
-      <title>readme</title>
+      <title>README</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
       <link rel="stylesheet" href="file:///C:\Users\3132\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.5\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
       <style> 
       /**
  * prism.js Github theme based on GitHub's theme.
@@ -216,82 +204,88 @@ code.language-yaml {
       <div class="mume markdown-preview   ">
       <h1 class="mume-header" id="helloelectron">HelloElectron</h1>
 
-<p>2018.6.12为了测试electronjs框架，建立此项目。</p>
-<h2 class="mume-header" id="%E5%BB%BA%E7%AB%8B%E6%AD%A5%E9%AA%A4">建立步骤</h2>
+      <p>2018.6.12为了测试electronjs框架，建立此项目。</p>
+      <h2 class="mume-header" id="%E5%85%B3%E4%BA%8Eelectron%E6%A1%86%E6%9E%B6">关于electron框架</h2>
 
-<p>a. 在自己的workspace下新建文件夹，文件夹名为项目名；<br>
-b. 然后运行 npm(cnpm) init，根据提示输入相关项，结束后会在项目目录下生成package.json，里面有项目相关信息；<br>
-c. 运行npm(cnpm) install -g electron 安装项目依赖；<br>
-d. 在项目目录下建立index.html（页面显示）、main.js（处理操作）两个文件，此时，项目目下共有三个文件：index.html,main.js,package.json;<br>
-e. 然后编辑index.html的代码如下：</p>
-<pre data-role="codeBlock" data-info="" class="language-"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;hello electron&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>f. 然后编辑main.js的代码如下：</p>
-<pre data-role="codeBlock" data-info="" class="language-"><code>const {app, BrowserWindow} = require(&apos;electron&apos;);
-let win;
-let windowConfig = {
-    width:800,
-    height:600
-};
-function createWindow(){
-    win = new BrowserWindow(windowConfig);
-    win.loadURL(`file://${__dirname}/index.html`);
-    //&#x5F00;&#x542F;&#x8C03;&#x8BD5;&#x5DE5;&#x5177;
-    win.webContents.openDevTools();
-    win.on(&apos;close&apos;,() =&gt; {
-        //&#x56DE;&#x6536;BrowserWindow&#x5BF9;&#x8C61;
-        win = null;
-    });
-    win.on(&apos;resize&apos;,() =&gt; {
-        win.reload();
-    })
-}
+      <p>以nodejs为基础，可以将html、js、css构建成跨平台的桌面应用。<br><br>
+      相当于nodejs的一个库，该库的功能就是将原本需要运行在浏览器或nodejs服务器端的程序以桌面应用程序的形式运行。<br><br>
+      这样做的好处是对于不同平台，只需要一套界面和业务代码，提高了代码的复用性和跨平台能力。<br><br>
+      该库的使用方式如下。</p>
+      <h2 class="mume-header" id="%E5%BB%BA%E7%AB%8B%E6%AD%A5%E9%AA%A4">建立步骤</h2>
 
-app.on(&apos;ready&apos;,createWindow);
-app.on(&apos;window-all-closed&apos;,() =&gt; {
-    app.quit();
-});
+      <p>a. 在自己的workspace下新建文件夹，文件夹名为项目名；<br>
+      b. 然后运行 npm(cnpm) init，根据提示输入相关项，结束后会在项目目录下生成package.json，里面有项目相关信息；<br>
+      c. 运行npm(cnpm) install -g electron 安装项目依赖；<br>
+      d. 在项目目录下建立index.html（页面显示）、main.js（处理操作）两个文件，此时，项目目下共有三个文件：index.html,main.js,package.json;<br>
+      e. 然后编辑index.html的代码如下：</p>
+      <pre data-role="codeBlock" data-info="" class="language-"><code>&lt;!DOCTYPE html&gt;
+      &lt;html lang=&quot;en&quot;&gt;
+      &lt;head&gt;
+          &lt;meta charset=&quot;UTF-8&quot;&gt;
+          &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+          &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+          &lt;title&gt;Document&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;h1&gt;hello electron&lt;/h1&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;
+      </code></pre><p>f. 然后编辑main.js的代码如下：</p>
+      <pre data-role="codeBlock" data-info="" class="language-"><code>const {app, BrowserWindow} = require(&apos;electron&apos;);
+      let win;
+      let windowConfig = {
+          width:800,
+          height:600
+      };
+      function createWindow(){
+          win = new BrowserWindow(windowConfig);
+          win.loadURL(`file://${__dirname}/index.html`);
+          //&#x5F00;&#x542F;&#x8C03;&#x8BD5;&#x5DE5;&#x5177;
+          win.webContents.openDevTools();
+          win.on(&apos;close&apos;,() =&gt; {
+              //&#x56DE;&#x6536;BrowserWindow&#x5BF9;&#x8C61;
+              win = null;
+          });
+          win.on(&apos;resize&apos;,() =&gt; {
+              win.reload();
+          })
+      }
 
-app.on(&apos;activate&apos;,() =&gt; {
-    if(win == null){
-        createWindow();
-    }
-})
-</code></pre><p>g. 在package.json文件里添加start字段：</p>
-<pre data-role="codeBlock" data-info="" class="language-"><code>&quot;start&quot;: &quot;electron .&quot;
-</code></pre><p>package.json的代码如下：</p>
-<pre data-role="codeBlock" data-info="" class="language-"><code>//&#x5728;b&#x6B65;&#x9AA4;&#x5185;&#x8F93;&#x5165;&#x7684;&#x76F8;&#x5173;&#x53C2;&#x6570;
-{
-  &quot;name&quot;: &quot;zzh&quot;, 
-  &quot;version&quot;: &quot;0.0.1&quot;,
-  &quot;description&quot;: &quot;a simple application&quot;,
-  &quot;main&quot;: &quot;main.js&quot;,
-  &quot;scripts&quot;: {
-    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
-    &quot;start&quot;: &quot;electron .&quot;
-  },
-  &quot;author&quot;: &quot;zzh&quot;,
-  &quot;license&quot;: &quot;ISC&quot;
-}
-</code></pre><p>h. 运行npm(cnpm) start启动项目。</p>
-<h2 class="mume-header" id="%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE">打包项目</h2>
+      app.on(&apos;ready&apos;,createWindow);
+      app.on(&apos;window-all-closed&apos;,() =&gt; {
+          app.quit();
+      });
 
-<p>a. 在项目目下运行npm(cnpm) install -g electron-packager；<br>
-b. 运行一下代码：</p>
-<blockquote>
-<p>electron-packager . HelloWorld(软件名称，自己起) --win(平台，此处为windows) --out ../HelloWorldApp(目的目录) --arch=x64(系统架构，32位还是64位，此处为64位，32位的写ia32)  --electron-version=1.4.13(electron版本)</p>
-</blockquote>
-<p>c. 然后在目的目录里寻找生成exe文件即可。</p>
+      app.on(&apos;activate&apos;,() =&gt; {
+          if(win == null){
+              createWindow();
+          }
+      })
+      </code></pre><p>g. 在package.json文件里添加start字段：</p>
+      <pre data-role="codeBlock" data-info="" class="language-"><code>&quot;start&quot;: &quot;electron .&quot;
+      </code></pre><p>package.json的代码如下：</p>
+      <pre data-role="codeBlock" data-info="" class="language-"><code>//&#x5728;b&#x6B65;&#x9AA4;&#x5185;&#x8F93;&#x5165;&#x7684;&#x76F8;&#x5173;&#x53C2;&#x6570;
+      {
+        &quot;name&quot;: &quot;zzh&quot;, 
+        &quot;version&quot;: &quot;0.0.1&quot;,
+        &quot;description&quot;: &quot;a simple application&quot;,
+        &quot;main&quot;: &quot;main.js&quot;,
+        &quot;scripts&quot;: {
+          &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+          &quot;start&quot;: &quot;electron .&quot;
+        },
+        &quot;author&quot;: &quot;zzh&quot;,
+        &quot;license&quot;: &quot;ISC&quot;
+      }
+      </code></pre><p>h. 运行npm(cnpm) start启动项目。</p>
+      <h2 class="mume-header" id="%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE">打包项目</h2>
+
+      <p>a. 在项目目下运行npm(cnpm) install -g electron-packager；<br><br>
+      b. 运行以下代码：</p>
+      <blockquote>
+      <p>electron-packager . HelloWorld(软件名称，自己起) --win(平台，此处为windows) --out ../HelloWorldApp(目的目录) --arch=x64(系统架构，32位还是64位，此处为64位，32位的写ia32)  --electron-version=1.4.13(electron版本)</p>
+      </blockquote>
+      <p>c. 然后在目的目录里寻找生成exe文件即可。</p>
 
       </div>
       

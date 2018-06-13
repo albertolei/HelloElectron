@@ -1,5 +1,10 @@
 # HelloElectron
 2018.6.12为了测试electronjs框架，建立此项目。
+## 关于electron框架
+以nodejs为基础，可以将html、js、css构建成跨平台的桌面应用。<br>
+相当于nodejs的一个库，该库的功能就是将原本需要运行在浏览器或nodejs服务器端的程序以桌面应用程序的形式运行。<br>
+这样做的好处是对于不同平台，只需要一套界面和业务代码，提高了代码的复用性和跨平台能力。<br>
+该库的使用方式如下。
 ## 建立步骤
 a. 在自己的workspace下新建文件夹，文件夹名为项目名；
 b. 然后运行 npm(cnpm) init，根据提示输入相关项，结束后会在项目目录下生成package.json，里面有项目相关信息；
@@ -75,8 +80,8 @@ package.json的代码如下：
 ```
 h. 运行npm(cnpm) start启动项目。
 ## 打包项目
-a. 在项目目下运行npm(cnpm) install -g electron-packager；
-b. 运行一下代码：
+a. 在项目目下运行npm(cnpm) install -g electron-packager；<br>
+b. 运行以下代码：
 > electron-packager . HelloWorld(软件名称，自己起) --win(平台，此处为windows) --out ../HelloWorldApp(目的目录) --arch=x64(系统架构，32位还是64位，此处为64位，32位的写ia32)  --electron-version=1.4.13(electron版本)
 
 c. 然后在目的目录里寻找生成exe文件即可。
